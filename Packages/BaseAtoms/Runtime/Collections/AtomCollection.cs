@@ -20,12 +20,12 @@ namespace UnityAtoms.BaseAtoms
         /// <summary>
         /// Event for when and item is added to the collection.
         /// </summary>
-        public AtomBaseVariableEvent Added { get => _added; set => _added = value; }
+        public HandyBaseVariableEvent Added { get => _added; set => _added = value; }
 
         /// <summary>
         /// Event for when and item is removed from the collection.
         /// </summary>
-        public AtomBaseVariableEvent Removed { get => _removed; set => _removed = value; }
+        public HandyBaseVariableEvent Removed { get => _removed; set => _removed = value; }
 
         /// <summary>
         /// Event for when the collection is cleared.
@@ -33,10 +33,10 @@ namespace UnityAtoms.BaseAtoms
         public VoidEvent Cleared { get => _cleared; set => _cleared = value; }
 
         [SerializeField]
-        private AtomBaseVariableEvent _added;
+        private HandyBaseVariableEvent _added;
 
         [SerializeField]
-        private AtomBaseVariableEvent _removed;
+        private HandyBaseVariableEvent _removed;
 
         [SerializeField]
         private VoidEvent _cleared;

@@ -10,7 +10,7 @@ namespace UnityAtoms.Editor
     /// <typeparam name="T">The type of this event..</typeparam>
     /// <typeparam name="E">Event of type T.</typeparam>
     public abstract class AtomEventEditor<T, E> : UnityEditor.Editor
-        where E : AtomEvent<T>
+        where E : HandyEvent<T>
     {
         public override VisualElement CreateInspectorGUI()
         {

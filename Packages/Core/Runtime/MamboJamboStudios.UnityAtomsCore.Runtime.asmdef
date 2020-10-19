@@ -1,6 +1,8 @@
 {
     "name": "MamboJamboStudios.UnityAtomsCore.Runtime",
-    "references": [],
+    "references": [
+        "GUID:d2d422b027133664eb5d5e44fd124a4d"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

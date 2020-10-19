@@ -20,8 +20,8 @@ namespace UnityAtoms
     public abstract class AtomVariableInstancer<V, P, T, E1, E2, F> : AtomBaseVariableInstancer<T, V>, IGetEvent, ISetEvent
         where V : AtomVariable<T, P, E1, E2, F>
         where P : struct, IPair<T>
-        where E1 : AtomEvent<T>
-        where E2 : AtomEvent<P>
+        where E1 : HandyEvent<T>
+        where E2 : HandyEvent<P>
         where F : AtomFunction<T, T>
     {
         /// <summary>
@@ -41,7 +41,7 @@ namespace UnityAtoms
         }
 
         /// <summary>
-        /// Get event by type. 
+        /// Get event by type.
         /// </summary>
         /// <typeparam name="E"></typeparam>
         /// <returns>The event.</returns>
@@ -56,7 +56,7 @@ namespace UnityAtoms
         }
 
         /// <summary>
-        /// Set event by type. 
+        /// Set event by type.
         /// </summary>
         /// <param name="e">The new event value.</param>
         /// <typeparam name="E"></typeparam>

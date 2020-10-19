@@ -14,7 +14,7 @@ namespace UnityAtoms
     [EditorIcon("atom-icon-sign-blue")]
     [DefaultExecutionOrder(Runtime.ExecutionOrder.VARIABLE_INSTANCER)]
     public abstract class AtomEventInstancer<T, E> : MonoBehaviour, IGetEvent, ISetEvent
-        where E : AtomEvent<T>
+        where E : HandyEvent<T>
     {
         public T InspectorRaiseValue { get => _inspectorRaiseValue; }
 

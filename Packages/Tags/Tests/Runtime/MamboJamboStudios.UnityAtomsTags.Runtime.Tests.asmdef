@@ -5,14 +5,16 @@
         "MamboJamboStudios.UnityAtomsCore.Runtime",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "MamboJamboStudios.UnityAtomsBaseAtoms.Runtime"
+        "MamboJamboStudios.UnityAtomsBaseAtoms.Runtime",
+        "Sirenix.OdinInspector.CompatibilityLayer"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "nunit.framework.dll"
+        "nunit.framework.dll",
+        "Sirenix.Serialization.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

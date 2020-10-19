@@ -8,8 +8,8 @@ namespace UnityAtoms.BaseAtoms
     /// </summary>
     public interface IWithCollectionEvents
     {
-        AtomBaseVariableEvent Added { get; set; }
-        AtomBaseVariableEvent Removed { get; set; }
+        HandyBaseVariableEvent Added { get; set; }
+        HandyBaseVariableEvent Removed { get; set; }
         VoidEvent Cleared { get; set; }
     }
 }

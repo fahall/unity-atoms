@@ -2,7 +2,8 @@
     "name": "MamboJamboStudios.UnityAtomsTags.Runtime",
     "references": [
         "MamboJamboStudios.UnityAtomsCore.Runtime",
-        "MamboJamboStudios.UnityAtomsBaseAtoms.Runtime"
+        "MamboJamboStudios.UnityAtomsBaseAtoms.Runtime",
+        "Sirenix.OdinInspector.CompatibilityLayer"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

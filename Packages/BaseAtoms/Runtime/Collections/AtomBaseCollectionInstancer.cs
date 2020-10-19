@@ -13,13 +13,13 @@ namespace UnityAtoms.BaseAtoms
     public abstract class AtomBaseCollectionInstancer<T, V> : AtomBaseVariableInstancer<T, V>
         where V : AtomBaseVariable<T>, IWithCollectionEvents
     {
-        public AtomBaseVariableEvent Added
+        public HandyBaseVariableEvent Added
         {
             get => ((V)_inMemoryCopy).Added;
             set => ((V)_inMemoryCopy).Added = value;
         }
 
-        public AtomBaseVariableEvent Removed
+        public HandyBaseVariableEvent Removed
         {
             get => ((V)_inMemoryCopy).Removed;
             set => ((V)_inMemoryCopy).Removed = value;

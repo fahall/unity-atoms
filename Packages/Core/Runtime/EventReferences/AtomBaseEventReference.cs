@@ -33,7 +33,7 @@ namespace UnityAtoms
     /// <typeparam name="E">Event of type `T`.</typeparam>
     /// <typeparam name="EI">Event Instancer of type `T`.</typeparam>
     public abstract class AtomBaseEventReference<T, E, EI> : AtomBaseEventReference, IGetEvent, ISetEvent
-        where E : AtomEvent<T>
+        where E : HandyEvent<T>
         where EI : AtomEventInstancer<T, E>
     {
         /// <summary>

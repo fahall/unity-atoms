@@ -20,12 +20,12 @@ namespace UnityAtoms.BaseAtoms
         /// <summary>
         /// Event for when and item is added to the list.
         /// </summary>
-        public AtomBaseVariableEvent Added { get => _added; set => _added = value; }
+        public HandyBaseVariableEvent Added { get => _added; set => _added = value; }
 
         /// <summary>
         /// Event for when and item is removed from the list.
         /// </summary>
-        public AtomBaseVariableEvent Removed { get => _removed; set => _removed = value; }
+        public HandyBaseVariableEvent Removed { get => _removed; set => _removed = value; }
 
         /// <summary>
         /// Event for when the list is cleared.
@@ -34,10 +34,10 @@ namespace UnityAtoms.BaseAtoms
 
 
         [SerializeField]
-        private AtomBaseVariableEvent _added;
+        private HandyBaseVariableEvent _added;
 
         [SerializeField]
-        private AtomBaseVariableEvent _removed;
+        private HandyBaseVariableEvent _removed;
 
         [SerializeField]
         private VoidEvent _cleared;

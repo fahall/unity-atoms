@@ -16,8 +16,8 @@ namespace UnityAtoms
     [EditorIcon("atom-icon-lush")]
     public abstract class AtomVariable<T, P, E1, E2, F> : AtomBaseVariable<T>, IGetEvent, ISetEvent
         where P : struct, IPair<T>
-        where E1 : AtomEvent<T>
-        where E2 : AtomEvent<P>
+        where E1 : HandyEvent<T>
+        where E2 : HandyEvent<P>
         where F : AtomFunction<T, T>
     {
         /// <summary>

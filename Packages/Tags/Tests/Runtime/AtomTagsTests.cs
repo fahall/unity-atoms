@@ -58,7 +58,7 @@ namespace UnityAtoms.Tags.Tests
                 AtomTags.FindByTag("e");
             }
             // THIS:
-            // Assert.That(() => { var t1 = AtomicTags.FindByTag("e"); }, Is.AllocatingGCMemory());
+            // Assert.That(() => { var t1 = atomicTags.FindByTag("e"); }, Is.AllocatingGCMemory());
             // says it allocates, the profiler says it does not
 
             using (new ProfilerMarker("MySystem.MultpleGet").Auto())

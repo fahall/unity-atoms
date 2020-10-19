@@ -25,7 +25,7 @@ namespace UnityAtoms
     /// <typeparam name="UER">UnityEvent of type `T`.</typeparam>
     [EditorIcon("atom-icon-orange")]
     public abstract class AtomBaseListener<T, E, UER> : AtomBaseListener, IAtomListener<T>
-        where E : AtomEvent<T>
+        where E : HandyEvent<T>
         where UER : UnityEvent<T>
     {
         /// <summary>

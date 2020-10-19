@@ -9,7 +9,7 @@ namespace UnityAtoms.BaseAtoms
     [AddComponentMenu("Unity Atoms/Listeners/AtomBaseVariable Base Event Reference Listener")]
     public sealed class AtomBaseVariableBaseEventReferenceListener : AtomEventReferenceListener<
         AtomBaseVariable,
-        AtomBaseVariableEvent,
+        HandyBaseVariableEvent,
         AtomBaseVariableBaseEventReference,
         AtomBaseVariableUnityEvent>
     { }

@@ -12,7 +12,7 @@ namespace UnityAtoms
     /// <typeparam name="E">Event of type `AtomEvent&lt;T&gt;`.</typeparam>
     [EditorIcon("atom-icon-piglet")]
     public abstract class AtomValueList<T, E> : BaseAtomValueList, IList<T>
-        where E : AtomEvent<T>
+        where E : HandyEvent<T>
     {
         /// <summary>
         /// Event for when something is added to the list.

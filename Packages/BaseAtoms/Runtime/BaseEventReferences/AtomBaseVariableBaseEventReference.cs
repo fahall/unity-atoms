@@ -25,14 +25,14 @@ namespace UnityAtoms.BaseAtoms
     [Serializable]
     public sealed class AtomBaseVariableBaseEventReference : AtomBaseEventReference<
         AtomBaseVariable,
-        AtomBaseVariableEvent,
+        HandyBaseVariableEvent,
         AtomBaseVariableEventInstancer>, IGetEvent
     {
         /// <summary>
         /// Get or set the Event used by the Event Reference.
         /// </summary>
         /// <value>The event of type `E`.</value>
-        public override AtomBaseVariableEvent Event
+        public override HandyBaseVariableEvent Event
         {
             get
             {

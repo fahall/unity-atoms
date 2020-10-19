@@ -11,7 +11,7 @@ namespace UnityAtoms.MonoHooks
     /// <typeparam name="F">Function type `AtomFunction&lt;GameObject, GameObject&gt;`</typeparam>
     [EditorIcon("atom-icon-delicate")]
     public abstract class MonoHook<E, EV, ER, F> : MonoBehaviour
-        where E : AtomEvent<EV>
+        where E : HandyEvent<EV>
         where ER : IGetEvent, ISetEvent
         where F : AtomFunction<GameObject, GameObject>
     {

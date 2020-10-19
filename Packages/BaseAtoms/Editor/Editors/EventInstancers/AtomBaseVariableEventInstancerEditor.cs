@@ -10,6 +10,6 @@ namespace UnityAtoms.BaseAtoms.Editor
     /// Event property drawer of type `AtomBaseVariable`. Inherits from `AtomEventInstancerEditor&lt;AtomBaseVariable, AtomBaseVariableEvent&gt;`. Only availble in `UNITY_2019_1_OR_NEWER`.
     /// </summary>
     [CustomEditor(typeof(AtomBaseVariableEventInstancer))]
-    public sealed class AtomBaseVariableEventInstancerEditor : AtomEventInstancerEditor<AtomBaseVariable, AtomBaseVariableEvent> { }
+    public sealed class AtomBaseVariableEventInstancerEditor : AtomEventInstancerEditor<AtomBaseVariable, HandyBaseVariableEvent> { }
 }
 #endif
