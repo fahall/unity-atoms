@@ -8,7 +8,7 @@ namespace UnityAtoms.SceneMgmt
     /// </summary>
     [EditorIcon("atom-icon-cherry")]
     [CreateAssetMenu(menuName = "Unity Atoms/Events/SceneFieldPair", fileName = "SceneFieldPairEvent")]
-    public sealed class SceneFieldPairEvent : HandyEvent<SceneFieldPair>
+    public sealed class SceneFieldPairEvent : AtomEvent<SceneFieldPair>
     {
     }
 }

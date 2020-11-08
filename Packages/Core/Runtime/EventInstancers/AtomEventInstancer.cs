@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -7,17 +8,15 @@ namespace UnityAtoms
 
     /// <summary>
     /// An Event Instancer is a MonoBehaviour that takes an Event as a base and creates an in memory copy of it on OnEnable.
-    /// This is handy when you want to use Events for prefabs that are instantiated at runtime. 
+    /// This is handy when you want to use Events for prefabs that are instantiated at runtime.
     /// </summary>
     /// <typeparam name="T">The value type.</typeparam>
     /// <typeparam name="E">Event of type T.</typeparam>
     [EditorIcon("atom-icon-sign-blue")]
     [DefaultExecutionOrder(Runtime.ExecutionOrder.VARIABLE_INSTANCER)]
     public abstract class AtomEventInstancer<T, E> : MonoBehaviour, IGetEvent, ISetEvent
-        where E : HandyEvent<T>
+        where E : AtomEvent<T>
     {
-        public T InspectorRaiseValue { get => _inspectorRaiseValue; }
-
         /// <summary>
         /// Getter for retrieving the in memory runtime Event.
         /// </summary>
@@ -32,13 +31,6 @@ namespace UnityAtoms
         /// </summary>
         [SerializeField]
         private E _base = null;
-
-        /// <summary>
-        /// Used when raising values from the inspector for debugging purposes.
-        /// </summary>
-        [SerializeField]
-        [Tooltip("Value that will be used when using the Raise button in the editor inspector.")]
-        private T _inspectorRaiseValue = default(T);
 
         private void OnEnable()
         {
@@ -66,7 +58,7 @@ namespace UnityAtoms
         }
 
         /// <summary>
-        /// Set event by type. 
+        /// Set event by type.
         /// </summary>
         /// <param name="e">The new event value.</param>
         /// <typeparam name="E"></typeparam>
@@ -78,7 +70,7 @@ namespace UnityAtoms
         /// <summary>
         /// Raises the instanced Event.
         /// </summary>
-        public void Raise()
+        [Button] public void Raise()
         {
             Event.Raise();
         }
@@ -87,7 +79,7 @@ namespace UnityAtoms
         /// Raises the instanced Event.
         /// </summary>
         /// <param name="item">The value associated with the Event.</param>
-        public void Raise(T item)
+        [Button] public void Raise(T item)
         {
             Event.Raise(item);
         }

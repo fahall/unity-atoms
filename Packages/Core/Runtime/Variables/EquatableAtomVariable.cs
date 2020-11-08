@@ -14,8 +14,8 @@ namespace UnityAtoms
     public abstract class EquatableAtomVariable<T, P, E1, E2, F> : AtomVariable<T, P, E1, E2, F>
         where T : IEquatable<T>
         where P : struct, IPair<T>
-        where E1 : HandyEvent<T>
-        where E2 : HandyEvent<P>
+        where E1 : AtomEvent<T>
+        where E2 : AtomEvent<P>
         where F : AtomFunction<T, T>
     {
         protected override bool ValueEquals(T other)

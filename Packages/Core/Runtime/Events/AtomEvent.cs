@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace UnityAtoms
@@ -10,15 +11,14 @@ namespace UnityAtoms
     /// </summary>
     /// <typeparam name="T">The type for this Event.</typeparam>
     [EditorIcon("atom-icon-cherry")]
-    public class HandyEvent<T> : AtomEventBase
+    public class AtomEvent<T> : AtomEventBase
     {
-        public T InspectorRaiseValue { get => _inspectorRaiseValue; }
 
         /// <summary>
         /// Retrieve Replay Buffer as a List. This call will allocate memory so use sparsely.
         /// </summary>
         /// <returns></returns>
-        public List<T> ReplayBuffer { get => _replayBuffer.ToList(); }
+        public List<T> ReplayBuffer => _replayBuffer.ToList();
 
         public int ReplayBufferSize { get => _replayBufferSize; set => _replayBufferSize = value; }
 
@@ -26,7 +26,7 @@ namespace UnityAtoms
         protected event Action<T> _onEvent;
 
         /// <summary>
-        /// The event replays the specified number of old values to new subscribers. Works like a ReplaySubject in Rx. 
+        /// The event replays the specified number of old values to new subscribers. Works like a ReplaySubject in Rx.
         /// </summary>
         [SerializeField]
         [Range(0, 10)]
@@ -48,18 +48,12 @@ namespace UnityAtoms
             }
         }
 
-        /// <summary>
-        /// Used when raising values from the inspector for debugging purposes.
-        /// </summary>
-        [SerializeField]
-        [Tooltip("Value that will be used when using the Raise button in the editor inspector.")]
-        private T _inspectorRaiseValue = default(T);
 
         /// <summary>
         /// Raise the Event.
         /// </summary>
         /// <param name="item">The value associated with the Event.</param>
-        public void Raise(T item)
+        [Button] public void Raise(T item)
         {
 #if !UNITY_ATOMS_GENERATE_DOCS && UNITY_EDITOR
             StackTraces.AddStackTrace(GetInstanceID(), StackTraceEntry.Create(item));
@@ -69,11 +63,6 @@ namespace UnityAtoms
             AddToReplayBuffer(item);
         }
 
-        /// <summary>
-        /// Used in editor scipts since Raise is ambigious when using reflection to get method.
-        /// </summary>
-        /// <param name="item"></param>
-        public void RaiseEditor(T item) => Raise(item);
 
         /// <summary>
         /// Register handler to be called when the Event triggers.

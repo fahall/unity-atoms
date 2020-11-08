@@ -20,8 +20,8 @@ namespace UnityAtoms
     public abstract class AtomVariableInstancer<V, P, T, E1, E2, F> : AtomBaseVariableInstancer<T, V>, IGetEvent, ISetEvent
         where V : AtomVariable<T, P, E1, E2, F>
         where P : struct, IPair<T>
-        where E1 : HandyEvent<T>
-        where E2 : HandyEvent<P>
+        where E1 : AtomEvent<T>
+        where E2 : AtomEvent<P>
         where F : AtomFunction<T, T>
     {
         /// <summary>
