@@ -62,7 +62,7 @@ namespace UnityAtoms.FSM
             Complete();
         }
 
-        public void OnEventRaised(bool completeTransition)
+        public void HandleInput(bool completeTransition)
         {
             if (completeTransition)
             {

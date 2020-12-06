@@ -56,7 +56,7 @@ namespace UnityAtoms
         [Button] public void Raise(T item)
         {
 #if !UNITY_ATOMS_GENERATE_DOCS && UNITY_EDITOR
-            StackTraces.AddStackTrace(GetInstanceID(), StackTraceEntry.Create(item));
+            //StackTraces.AddStackTrace(GetInstanceID(), StackTraceEntry.Create(item));
 #endif
             base.Raise();
             _onEvent?.Invoke(item);
@@ -97,10 +97,10 @@ namespace UnityAtoms
         /// <param name="listener">The Listener to register.</param>
         public void RegisterListener(IAtomListener<T> listener, bool replayEventsBuffer = true)
         {
-            _onEvent += listener.OnEventRaised;
+            _onEvent += listener.HandleInput;
             if (replayEventsBuffer)
             {
-                ReplayBufferToSubscriber(listener.OnEventRaised);
+                ReplayBufferToSubscriber(listener.HandleInput);
             }
         }
 
@@ -110,7 +110,7 @@ namespace UnityAtoms
         /// <param name="listener">The Listener to unregister.</param>
         public void UnregisterListener(IAtomListener<T> listener)
         {
-            _onEvent -= listener.OnEventRaised;
+            _onEvent -= listener.HandleInput;
         }
 
         #region Observable

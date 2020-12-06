@@ -20,10 +20,10 @@ namespace UnityAtoms.BaseAtoms
         /// </summary>
         public IntReference Max;
 
-        public override int Call(int value)
+        public override int Call(int item)
         {
             if (!IsValid()) { throw new Exception("Min value must be less than or equal to Max value."); }
-            return Mathf.Clamp(value, Min.Value, Max.Value);
+            return Mathf.Clamp(item, Min.Value, Max.Value);
         }
 
         public bool IsValid()

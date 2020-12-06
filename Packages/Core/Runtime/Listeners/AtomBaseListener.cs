@@ -67,7 +67,7 @@ namespace UnityAtoms
         /// Handler for when the Event gets raised.
         /// </summary>
         /// <param name="item">The Event type.</param>
-        public void OnEventRaised(T item)
+        public void HandleInput(T item)
         {
             _unityEventResponse?.Invoke(item);
             for (int i = 0; _actionResponses != null && i < _actionResponses.Count; ++i)

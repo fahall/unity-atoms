@@ -6,7 +6,7 @@ namespace UnityAtoms
     /// <summary>
     /// Base abstract class for Actions. Inherits from `BaseAtom`.
     /// </summary>
-    public abstract class AtomAction : BaseAtom
+    public abstract class AtomAction : BaseAtom, IAtomAction
     {
         /// <summary>
         /// Perform the Action.
@@ -18,7 +18,7 @@ namespace UnityAtoms
     /// Generic abstract base class for Actions. Inherits from `AtomAction`.
     /// </summary>
     /// <typeparam name="T1">The type for this Action.</typeparam>
-    public abstract class AtomAction<T1> : AtomAction
+    public abstract class AtomAction<T1> : AtomAction, IAtomAction<T1>
     {
         /// <summary>
         /// Perform the Action.

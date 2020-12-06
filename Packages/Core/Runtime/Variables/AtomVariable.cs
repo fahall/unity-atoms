@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -247,7 +248,7 @@ namespace UnityAtoms
 
         private T RunPreChangeTransformers(T value)
         {
-            if (_preChangeTransformers.Count <= 0)
+            if (_preChangeTransformers?.Any() != true)
             {
                 return value;
             }

@@ -33,7 +33,7 @@ namespace UnityAtoms.UI
         /// Handler for when the state is changed.
         /// </summary>
         /// <param name="stateName"></param>
-        public void OnEventRaised(string stateName)
+        public void HandleInput(string stateName)
         {
             StateNameChanged(stateName);
         }

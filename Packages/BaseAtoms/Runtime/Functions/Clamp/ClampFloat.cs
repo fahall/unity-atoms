@@ -20,10 +20,10 @@ namespace UnityAtoms.BaseAtoms
         /// </summary>
         public FloatReference Max;
 
-        public override float Call(float value)
+        public override float Call(float item)
         {
             if (!IsValid()) { throw new Exception("Min value must be less than or equal to Max value."); }
-            return Mathf.Clamp(value, Min.Value, Max.Value);
+            return Mathf.Clamp(item, Min.Value, Max.Value);
         }
 
         public bool IsValid()

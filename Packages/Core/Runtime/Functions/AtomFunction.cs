@@ -59,13 +59,13 @@ namespace UnityAtoms
         /// <summary>
         /// Call the Function.
         /// </summary>
-        /// <param name="t1">The first parameter.</param>
+        /// <param name="item">The first parameter.</param>
         /// <returns>Whatever the function decides to return of type `R`.</returns>
-        public virtual R Call(T1 t1)
+        public virtual R Call(T1 item)
         {
             if (Func != null)
             {
-                return Func(t1);
+                return Func(item);
             }
 
             throw new Exception("Either set Func or override the Call method.");
